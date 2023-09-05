@@ -1,4 +1,4 @@
-#Grab the latest alpine image
+#Grab the latest alpine image .
 FROM alpine:latest
 
 # Install python and pip
