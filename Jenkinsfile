@@ -19,8 +19,8 @@ pipeline{
             steps {
                 script {
                     sh '''
-                    docker run -d -p 80:5000 --name hello test/$image_name:$image_tag 
-                    sleep 5 
+                       docker run -d -p 80:5000 --name hello test/$image_name:$image_tag 
+                       sleep 5 
                     '''
                 }
             }
@@ -30,6 +30,17 @@ pipeline{
             steps {
                 script {
                     sh 'curl http://localhost | grep -q 'helloworld!' '
+                }
+            }
+        }
+        stage ('clean container') {
+            
+            steps {
+                script {
+                    sh '''
+                       docker stop hello  
+                       docker rm hello
+                    '''
                 }
             }
         }
