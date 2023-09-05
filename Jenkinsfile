@@ -19,7 +19,7 @@ pipeline{
             steps {
                 script {
                     sh '''
-                    docker run -d -p 80:5000 -- name hello test/$image_name:$image_tag 
+                    docker run -d -p 80:5000 --name hello test/$image_name:$image_tag 
                     sleep 5 
                     '''
                 }
