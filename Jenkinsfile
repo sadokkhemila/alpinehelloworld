@@ -1,8 +1,8 @@
 pipeline{
     agent any
     environment {
-        image-name = "alpineheloworld"
-        image-tag = "latest"
+        image_name = "alpineheloworld"
+        image_tag = "latest"
     }
 
     stages {
@@ -10,7 +10,7 @@ pipeline{
            
             steps {
                 script {
-                    sh 'docker build -t test/$image-name:$image-tag .'
+                    sh 'docker build -t test/$image_name:$image_tag .'
                 }
             }
         }
@@ -19,7 +19,7 @@ pipeline{
             steps {
                 script {
                     sh '''
-                    docker run -d -p 80:5000 -- name hello test/$image-name:$image-tag 
+                    docker run -d -p 80:5000 -- name hello test/$image_name:$image_tag 
                     sleep 5 
                     '''
                 }
