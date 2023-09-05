@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment {
-        image-name= "alpineheloworld"
+        image-name = "alpineheloworld"
         image-tag = "latest"
     }
 
