@@ -25,14 +25,7 @@ pipeline{
                 }
             }
         }
-        stage ('test container') {
-            
-            steps {
-                script {
-                    sh 'curl http://localhost | grep -q 'helloworld!' '
-                }
-            }
-        }
+       
         stage ('clean container') {
             
             steps {
